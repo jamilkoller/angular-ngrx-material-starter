@@ -22,6 +22,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
@@ -78,6 +79,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatSlideToggleModule,
     MatDividerModule,
     MatGridListModule,
+    MatProgressBarModule,
 
     BigInputComponent,
     BigInputActionComponent

@@ -21,9 +21,13 @@ export class AboutComponent implements OnInit {
   public pic1Content;
   public pic2Content;
 
+  public collisionState; // not_started, in_progress, finished
+  public loadingGif;
+
   constructor(db: AngularFirestore, private afStorage: AngularFireStorage) {
     this.pic1Uploaded = false;
     this.pic2Uploaded = false;
+    this.collisionState = 'not_started';
   }
 
   ngOnInit() {}
@@ -47,10 +51,20 @@ export class AboutComponent implements OnInit {
     };
     reader.readAsDataURL(event.target.files[0]);
 
+  }
+
+  collide() {
+    this.collisionState = 'in_progress';
+    const that = this;
+    const loadingGifNames = ['giphy.gif', 'headbang.gif', 'math.gif', 'willsmith.gif'];
+    this.loadingGif = loadingGifNames[Math.floor(Math.random() * loadingGifNames.length)];
+
+    const interval = window.setInterval(() => {
+      that.collisionState = 'finished';
+        window.clearInterval(interval);
+    }, 2500);
 
 
   }
-
-  collide() {}
 
 }
