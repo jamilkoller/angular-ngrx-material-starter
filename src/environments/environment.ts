@@ -6,7 +6,7 @@
 const packageJson = require('../../package.json');
 
 export const environment = {
-  appName: 'Angular Ngrx Material Starter',
+  appName: 'The Large Hadron Recycler',
   envName: 'DEV',
   production: false,
   test: false,
@@ -23,5 +23,13 @@ export const environment = {
       packageJson.dependencies['@fortawesome/fontawesome-free-webfonts'],
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript']
+  },
+  config: {
+    apiKey: 'AIzaSyB1vgTbf3WJteXH-PA0db_7IA-RvftMEZM',
+    authDomain: 'local-dimension-216523.firebaseapp.com',
+    databaseURL: 'https://local-dimension-216523.firebaseio.com',
+    projectId: 'local-dimension-216523',
+    storageBucket: 'local-dimension-216523.appspot.com',
+    messagingSenderId: '292653294241'
   }
 };

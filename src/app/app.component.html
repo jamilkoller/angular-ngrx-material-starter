@@ -8,11 +8,6 @@
          [routerLink]="[item.link]" routerLinkActive="active">
         {{item.label | translate}}
       </a>
-      <a mat-list-item
-         href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-         target="_blank">
-        Github
-      </a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -37,17 +32,17 @@
           </button>
         </span>
 
-      <button mat-button class="sign-in-button "
-              *ngIf="!isAuthenticated"
-              (click)="onLoginClick()">
-        {{ 'anms.menu.login' | translate }}
-      </button>
+      <!--<button mat-button class="sign-in-button "-->
+              <!--*ngIf="!isAuthenticated"-->
+              <!--(click)="onLoginClick()">-->
+        <!--{{ 'anms.menu.login' | translate }}-->
+      <!--</button>-->
 
-      <button *ngIf="isAuthenticated"
-              mat-icon-button
-              [matMenuTriggerFor]="toolbarUserMenu">
-        <mat-icon fontSet="fas" fontIcon="fa-user-circle"></mat-icon>
-      </button>
+      <!--<button *ngIf="isAuthenticated"-->
+              <!--mat-icon-button-->
+              <!--[matMenuTriggerFor]="toolbarUserMenu">-->
+        <!--<mat-icon fontSet="fas" fontIcon="fa-user-circle"></mat-icon>-->
+      <!--</button>-->
       <mat-menu #toolbarUserMenu="matMenu">
         <button mat-menu-item (click)="onLogoutClick()">
           <mat-icon fontSet="fas" fontIcon="fa-power-off"></mat-icon>
@@ -59,23 +54,6 @@
         <mat-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
       </button>
 
-      <a [matTooltip]="'anms.header.github' | translate"
-         matTooltipPosition="before"
-         mat-icon-button
-         class="link d-none d-sm-inline"
-         href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-         target="_blank">
-        <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
-      </a>
-
-      <span>
-        <mat-select [ngModel]="settings?.language"
-                    (selectionChange)="onLanguageSelect($event)">
-          <mat-option *ngFor="let l of languages" [value]="l">
-            {{ l.toUpperCase() }}
-          </mat-option>
-        </mat-select>
-      </span>
     </mat-toolbar>
   </div>
 
@@ -133,3 +111,5 @@
   </div>
 
 </mat-sidenav-container>
+
+

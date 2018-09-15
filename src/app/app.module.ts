@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { environment } from '@env/environment';
 
 import { SharedModule } from '@app/shared';
 import { CoreModule } from '@app/core';
@@ -10,6 +11,13 @@ import { StaticModule } from './static';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// Firebase
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+// Firebase
 
 @NgModule({
   imports: [
@@ -26,7 +34,13 @@ import { AppComponent } from './app.component';
     SettingsModule,
 
     // app
-    AppRoutingModule
+    AppRoutingModule,
+
+    // firebase:
+    AngularFireModule.initializeApp(environment.config),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   declarations: [AppComponent],
   providers: [],
