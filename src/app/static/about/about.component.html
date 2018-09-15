@@ -5,7 +5,7 @@
       <div class="actions">
 
 
-        <mat-grid-list cols="3" rowHeight="2:1" colspan="2" class="photo-controls">
+        <mat-grid-list cols="3" rowHeight="2:1" colspan="2" class="photo-controls" *ngIf="collisionState === 'not_started'">
           <mat-grid-tile>
             <div *ngIf="pic1Uploaded">
               todo: recyclable type?
@@ -28,7 +28,7 @@
                mat-raised-button class="actions-main" color="secondary"
                (click)="collide()"
             [disabled]="!pic1Uploaded || !pic2Uploaded">
-              Collide the photos
+              Collide 'em!
             </a>
 
           </mat-grid-tile>
@@ -53,6 +53,14 @@
 
         </mat-grid-list>
 
+        <div *ngIf="collisionState === 'in_progress'">
+          <img [src]="'assets/loading/' + loadingGif">
+        </div>
+
+        <div *ngIf="collisionState === 'finished'">
+          collision finished
+        </div>
+
         <br>
       </div>
     </div>
@@ -67,7 +75,7 @@
 
   <h2>The Paradox</h2>
   <p>
-    Everytime protons colide, the results are slightly different. They vary so much in fact, that a reliable way to predict or calculate the result is currently not possible. Even though, we collide seemingly identical material (or equally recyclable material), the results of the collissions differ. Why? We don’t know yet.
+    Everytime protons collide, the results are slightly different. They vary so much in fact, that a reliable way to predict or calculate the result is currently not possible. Even though, we collide seemingly identical material (or equally recyclable material), the results of the collissions differ. Why? We don’t know yet.
   </p>
 
   <h2>CERN - Power Consumption</h2>
@@ -77,6 +85,6 @@
 
   <h2>Why Green Object Collider?</h2>
   <p>
-    Green Object Collider highlights the paradox of combinding two materials. Two protons smashed together result in everything from Gamma Rays to Higgs Boson, while two plastic bottles can result in unicorns or a water fall… Theres simply much more to learn about our world.
+    Green Object Collider highlights the paradox of combining two materials. Two protons smashed together result in everything from Gamma Rays to Higgs Boson, while two plastic bottles can result in unicorns or a water fall… Theres simply much more to learn about our world.
   </p>
 </div>
