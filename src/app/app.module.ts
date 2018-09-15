@@ -19,6 +19,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 // Firebase
 
+import { HttpClientModule } from  '@angular/common/http';
+
 @NgModule({
   imports: [
     // angular
@@ -40,7 +42,9 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFireModule.initializeApp(environment.config),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+
+    HttpClientModule
   ],
   declarations: [AppComponent],
   providers: [],

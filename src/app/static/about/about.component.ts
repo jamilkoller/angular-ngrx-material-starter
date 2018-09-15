@@ -3,6 +3,7 @@ import { AngularFireStorage } from 'angularfire2/storage';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { forEach } from '@angular/router/src/utils/collection';
+import {ApiService} from '../../api.service';
 
 @Component({
   selector: 'anms-about',
@@ -32,11 +33,12 @@ export class AboutComponent implements OnInit {
   private typesCollection;
   private images;
 
-  constructor(db: AngularFirestore, private afStorage: AngularFireStorage) {
+  constructor(db: AngularFirestore, private afStorage: AngularFireStorage,
+              private  apiService:  ApiService) {
     this.db = db;
     this.pic1Uploaded = false;
     this.pic2Uploaded = false;
-    
+
     this.collisionState = 'not_started';
 
     this.typesCollection = db.collection('images');
@@ -58,6 +60,8 @@ export class AboutComponent implements OnInit {
     });
   }
 
+
+
   uploadPhoto(event, num) {
     const randomId = Math.random()
       .toString(36)
@@ -68,6 +72,8 @@ export class AboutComponent implements OnInit {
 
     const reader = new FileReader();
     const that = this;
+
+
     reader.onload = function(reader_event) {
       if (num === 1) {
         that.pic1Uploaded = true;
@@ -78,7 +84,14 @@ export class AboutComponent implements OnInit {
         that.pic1Id = fileName;
         that.pic2Content = reader_event.target.result;
       }
+
+      that.apiService.predictObjectType(reader_event.target.result)
+        .subscribe(data => {
+          console.log(data);
+        });
+
     };
+
     reader.readAsDataURL(event.target.files[0]);
 
   }
@@ -93,8 +106,8 @@ export class AboutComponent implements OnInit {
       that.collisionState = 'finished';
         window.clearInterval(interval);
     }, 2500);
-
-
   }
+
+
 
 }
