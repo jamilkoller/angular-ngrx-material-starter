@@ -4,12 +4,42 @@
       <h1>{{ 'anms.title' | translate }}</h1>
       <div class="actions">
 
-        <a [ngClass]="routeAnimationsElements"
-           mat-raised-button class="actions-main" color="primary"
-           (click)="medicationPhoto.click()">
-          {{ 'anms.menu.upload_photo' | translate }}
-        </a>
-        <input hidden type="file" #medicationPhoto (change)="uploadPhoto($event)"/>
+
+        <mat-grid-list cols="3" rowHeight="2:1" colspan="2">
+          <mat-grid-tile></mat-grid-tile>
+          <mat-grid-tile>
+            <a [ngClass]="routeAnimationsElements"
+               mat-raised-button class="actions-main" color="primary"
+               (click)="medicationPhoto.click()">
+              Upload photo 1
+            </a>
+            <input hidden type="file" #medicationPhoto (change)="uploadPhoto($event)"/>
+          </mat-grid-tile>
+          <mat-grid-tile rowspan="2">
+
+            <a [ngClass]="routeAnimationsElements"
+               mat-raised-button class="actions-main" color="secondary"
+               (click)="medicationPhoto.click()"
+            [disabled]="!pic1Uploaded || !pic2Uploaded">
+              Upload photo 2
+            </a>
+
+          </mat-grid-tile>
+
+          <mat-grid-tile></mat-grid-tile>
+          <mat-grid-tile>
+            <a [ngClass]="routeAnimationsElements"
+               mat-raised-button class="actions-main" color="primary"
+               (click)="medicationPhoto.click()">
+              Upload photo 2
+            </a>
+            <input hidden type="file" #medicationPhoto (change)="uploadPhoto($event)"/>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+
+
+
 
         <br>
       </div>

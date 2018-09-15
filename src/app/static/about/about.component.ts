@@ -3,6 +3,7 @@ import { AngularFireStorage } from 'angularfire2/storage';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 
+
 @Component({
   selector: 'anms-about',
   templateUrl: './about.component.html',
@@ -11,8 +12,12 @@ import {AngularFirestore} from '@angular/fire/firestore';
 export class AboutComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   releaseButler = require('../../../assets/release-butler.png');
-
-  constructor(db: AngularFirestore, private afStorage: AngularFireStorage) {}
+  public pic1Uploaded;
+  public pic2Uploaded;
+  constructor(db: AngularFirestore, private afStorage: AngularFireStorage) {
+    this.pic1Uploaded = false;
+    this.pic2Uploaded = false;
+  }
 
   ngOnInit() {}
 
