@@ -84,8 +84,14 @@
       </div>
       <div class="row">
         <div class="col-12 signature">
-          &#169; <span class="year">{{year}}</span> - CERN & cool guys
+          &#169; <span class="year">{{year}}</span> - CERN & Co
           <br class="d-block d-sm-none">
+          <a [matTooltip]="'anms.footer.changelog' | translate"
+             matTooltipPosition="before"
+             href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md">
+            <mat-icon fontSet="fas" fontIcon="fa-rocket"></mat-icon>
+            {{version}} <span *ngIf="!isProd">[{{envName}}]</span>
+          </a>
         </div>
       </div>
     </div>

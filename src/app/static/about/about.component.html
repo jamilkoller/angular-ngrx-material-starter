@@ -7,8 +7,18 @@
 
         <mat-grid-list cols="3" rowHeight="2:1" colspan="2" class="photo-controls" *ngIf="collisionState === 'not_started'">
           <mat-grid-tile>
-            <div *ngIf="pic1Uploaded">
-              todo: recyclable type?
+            <div *ngIf="pic1Uploaded && !pic1Analysed">
+              <mat-progress-bar></mat-progress-bar>
+              Analysing...
+            </div>
+            <div *ngIf="pic1Uploaded && pic1Analysed">
+              <div *ngIf="pic1Recyclable">
+                <div>Recyclable: yes</div>
+                <div>Material: {{ pic1Type }} ({{ pic1TypeProb }}%)</div>
+              </div>
+              <div *ngIf="!pic1Recyclable">
+                Recyclable: no
+              </div>
             </div>
           </mat-grid-tile>
           <mat-grid-tile>
@@ -34,8 +44,18 @@
           </mat-grid-tile>
 
           <mat-grid-tile>
-            <div *ngIf="pic2Uploaded">
-              todo: recyclable type?
+            <div *ngIf="pic2Uploaded && !pic2Analysed">
+              <mat-progress-bar></mat-progress-bar>
+              Analysing...
+            </div>
+            <div *ngIf="pic2Uploaded && pic2Analysed">
+              <div *ngIf="pic2Recyclable">
+                <div>Recyclable: yes</div>
+                <div>Material: {{ pic2Type }} ({{ pic2TypeProb }}%)</div>
+              </div>
+              <div *ngIf="!pic2Recyclable">
+                Recyclable: no
+              </div>
             </div>
           </mat-grid-tile>
           <mat-grid-tile>
@@ -54,11 +74,15 @@
         </mat-grid-list>
 
         <div *ngIf="collisionState === 'in_progress'">
-          <img [src]="'assets/loading/' + loadingGif">
+          <img src="assets/loading/collider.gif">
         </div>
 
         <div *ngIf="collisionState === 'finished'">
-          collision finished
+          <h2>Collision finished!</h2>
+
+          <h3>The outcome is always unexpected and never the same in the hadron collider!</h3>
+          <img [src]="'/assets/result/' + collisionResultPic + '.jpg'"  style="width: 600px;">
+
         </div>
 
         <br>
@@ -68,23 +92,31 @@
 </div>
 <div class="container">
 
-  <h2>The Real CERN - Large Hydron Collider</h2>
+  <h2>The Real CERN - Large Hadron Collider</h2>
   <p>
-    The LHC is a particle accelerator that pushes protons or ions to near the speed of light. It consists of a 27-kilometre ring of superconducting magnets with a number of accelerating structures that boost the energy of the particles along the way.
+    The LHC is a particle accelerator that pushes protons or ions to near the speed of light.
+    It consists of a 27-kilometre ring of superconducting magnets with a number of accelerating structures that
+    boost the energy of the particles along the way.
   </p>
 
   <h2>The Paradox</h2>
   <p>
-    Everytime protons collide, the results are slightly different. They vary so much in fact, that a reliable way to predict or calculate the result is currently not possible. Even though, we collide seemingly identical material (or equally recyclable material), the results of the collissions differ. Why? We don’t know yet.
+    Every time protons collide, the results are slightly different. They vary so much in fact,
+    that a reliable way to predict or calculate the result is currently not possible.
+    Even though, we collide seemingly identical material (or equally recyclable material), the results of the
+    collisions differ. Why? We don’t know yet.
   </p>
 
   <h2>CERN - Power Consumption</h2>
   <p>
-    The total CERN energy consumption is 1.3 TWh per year while the total electrical energy production in the world is around 20000 TWh, in the European Union 3400 TWh, in France around 500 TWh, and in Geneva canton 3 TWh.
+    The total CERN energy consumption is 1.3 TWh per year while the total electrical energy production in the world is
+    around 20000 TWh, in the European Union 3400 TWh, in France around 500 TWh, and in Geneva canton 3 TWh.
   </p>
 
   <h2>Why Green Object Collider?</h2>
   <p>
-    Green Object Collider highlights the paradox of combining two materials. Two protons smashed together result in everything from Gamma Rays to Higgs Boson, while two plastic bottles can result in unicorns or a water fall… Theres simply much more to learn about our world.
+    Green Object Collider highlights the paradox of combining two materials. Two protons smashed together result in
+    everything from Gamma Rays to Higgs Boson, while two plastic bottles can result in unicorns or a water fall...
+    There's simply much more to learn about our world.
   </p>
 </div>

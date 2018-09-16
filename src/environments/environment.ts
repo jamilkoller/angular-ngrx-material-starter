@@ -30,6 +30,7 @@ export const environment = {
     databaseURL: 'https://local-dimension-216523.firebaseio.com',
     projectId: 'local-dimension-216523',
     storageBucket: 'local-dimension-216523.appspot.com',
-    messagingSenderId: '292653294241'
+    messagingSenderId: '292653294241',
+    visionToken: 'ya29.c.EloaBgBXF1DV9K-p5wE9IZg5Qk0ZqvYqpDJdatkj33PCVm034VS7dpjpZGIPFCIUgIG2BhOKfkyMIR0BRCEkAywbOhBDrBPOjXSRIWiDdOypbVBjy_rWWl8D7j8'
   }
 };
