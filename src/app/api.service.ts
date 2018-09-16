@@ -23,9 +23,7 @@ export class ApiService {
     return this.httpClient.post(`${this.API_URL}`, payload, {
       headers: {
         'Content-Type': 'application/json',
-        Authorization:
-          'Bearer ya29.GqQBGQYE0hUcwLcwrVbMzcbgfzlTvCsw4IHLdChcEqZKxLj99G3I5Cr0chgsiUOQq_nDUB2xVkrIrPk7hi0VHkELjzwA2kNNkamnXzZtoa23-' +
-          'HP-1ur1p6I-8gn1mz9EyxDvXoMPWk6Ajr_ulDgc6GPl8RqZpBM6sxqoLtkgi5O4zfB0DnbbKZnS-rw11Oke1zvvhdD1A-MW_Y9XfcT_PFNmOWi0yd8'
+        Authorization: 'Bearer ' + environment.config.visionToken
       }
     });
   }

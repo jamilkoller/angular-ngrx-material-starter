@@ -31,6 +31,6 @@ export const environment = {
     projectId: 'local-dimension-216523',
     storageBucket: 'local-dimension-216523.appspot.com',
     messagingSenderId: '292653294241',
-    visionToken: 'ya29.c.EloZBjCU6xvUDiQ1BNhYWXaBogihACxi-UV8k-XZGG4c_91im_xAe-15JkH5POLRfG71hpPX_ZIy3yNadjD0-PSflhLKDhSP1zXDj25unQYYveOdQM_t8hnUOhI'
+    visionToken: 'ya29.c.EloaBgBXF1DV9K-p5wE9IZg5Qk0ZqvYqpDJdatkj33PCVm034VS7dpjpZGIPFCIUgIG2BhOKfkyMIR0BRCEkAywbOhBDrBPOjXSRIWiDdOypbVBjy_rWWl8D7j8'
   }
 };
