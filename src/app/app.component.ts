@@ -42,7 +42,7 @@ export class AppComponent implements OnInit, OnDestroy {
   envName = env.envName;
   version = env.versions.app;
   year = new Date().getFullYear();
-  logo = require('../assets/logo.png');
+  logo = require('../assets/LOGO_CERN_openlab_0.png');
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br'];
   navigation = [
     { link: 'about', label: 'anms.menu.about' },
